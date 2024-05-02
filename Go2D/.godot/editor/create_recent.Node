@@ -1,6 +1,10 @@
+ParallaxLayer
+Label
+TextEdit
+Panel
+ParallaxBackground
 AnimationPlayer
 Camera2D
-Panel
 CollisionShape2D
 StaticBody2D
 AnimatedSprite2D
