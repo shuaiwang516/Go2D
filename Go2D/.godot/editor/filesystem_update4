@@ -1,6 +1,8 @@
+res://main.tscn
 res://map_1.tscn
 res://fox_player.tscn
 res://water_background.tscn
-res://main.tscn
 res://water_background.gd
 res://fox_player.gd
+res://main.gd
+res://map_1.gd

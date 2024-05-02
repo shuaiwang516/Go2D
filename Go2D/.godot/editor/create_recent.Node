@@ -1,5 +1,7 @@
-ParallaxLayer
 Label
+Control
+TileMap
+ParallaxLayer
 TextEdit
 Panel
 ParallaxBackground
@@ -10,4 +12,3 @@ StaticBody2D
 AnimatedSprite2D
 CharacterBody2D
 Node2D
-Button
