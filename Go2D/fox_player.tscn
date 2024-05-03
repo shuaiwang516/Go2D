@@ -275,3 +275,5 @@ limit_right = 2303
 libraries = {
 "": SubResource("AnimationLibrary_23its")
 }
+
+[connection signal="ready" from="." to="." method="_on_ready"]

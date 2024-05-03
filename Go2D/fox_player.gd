@@ -9,9 +9,20 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jump_count = 0
 var max_jumps = 2
 
-
 @onready var player = get_node("AnimationPlayer")
 @onready var anim = get_node("AnimatedSprite2D")
+
+
+func _on_ready():
+	var players = "player_group"
+	# Retrieve all nodes in the 'player' group
+	var player_nodes = get_tree().get_nodes_in_group(players)
+	# Remove each node from the group
+	for node in player_nodes:
+		node.remove_from_group(players)
+	# Optionally, add this node to the 'player' group if needed
+	add_to_group(players)
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -44,3 +55,7 @@ func _physics_process(delta):
 	if velocity.y > 0:
 		player.play("Fall")
 	move_and_slide()
+	
+	if Utils.health_zero():
+		queue_free()
+		get_tree().change_scene_to_file("res://main.tscn")

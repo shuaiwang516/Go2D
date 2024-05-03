@@ -1,4 +1,10 @@
 Label
+CanvasLayer
+CollisionShape2D
+Area2D
+Node2D
+AnimatedSprite2D
+CharacterBody2D
 Control
 TileMap
 ParallaxLayer
@@ -6,9 +12,3 @@ TextEdit
 Panel
 ParallaxBackground
 AnimationPlayer
-Camera2D
-CollisionShape2D
-StaticBody2D
-AnimatedSprite2D
-CharacterBody2D
-Node2D

@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0crey44wgrqx"]
+[gd_scene load_steps=10 format=3 uid="uid://c0crey44wgrqx"]
 
 [ext_resource type="Script" path="res://water_background.gd" id="1_af3ol"]
 [ext_resource type="Texture2D" uid="uid://ba7qxk7x57vtf" path="res://sunny-land/assets/environment/tileset.png" id="1_nqj8l"]
 [ext_resource type="Script" path="res://map_1.gd" id="1_qpp2w"]
 [ext_resource type="PackedScene" uid="uid://cs8q3gcym2scj" path="res://fox_player.tscn" id="1_u3gil"]
 [ext_resource type="Texture2D" uid="uid://c1tqw8xw34why" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/environment/Background/back.png" id="2_4o2w2"]
+[ext_resource type="PackedScene" uid="uid://r0f04oj5qd60" path="res://mobs/frog_mobs.tscn" id="6_kqxyy"]
+[ext_resource type="Script" path="res://Bars.gd" id="7_si64w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm0hm"]
 texture = ExtResource("1_nqj8l")
@@ -759,9 +761,6 @@ texture = ExtResource("2_4o2w2")
 
 [node name="Chars" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="fox_player" parent="." instance=ExtResource("1_u3gil")]
-position = Vector2(2013, 350)
-
 [node name="Labels" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -803,3 +802,54 @@ theme_override_font_sizes/font_size = 25
 text = "Press Space Twice to Double Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="kill" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = 248.0
+offset_right = 1763.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Kill Enemies by Jumping to the Top"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="fox_player" parent="Player" instance=ExtResource("1_u3gil")]
+position = Vector2(2013, 350)
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="frog_mobs" parent="Mobs" instance=ExtResource("6_kqxyy")]
+position = Vector2(160, 528)
+
+[node name="frog_mobs2" parent="Mobs" instance=ExtResource("6_kqxyy")]
+position = Vector2(332, 499)
+
+[node name="frog_mobs3" parent="Mobs" instance=ExtResource("6_kqxyy")]
+position = Vector2(632, 425)
+
+[node name="frog_mobs4" parent="Mobs" instance=ExtResource("6_kqxyy")]
+position = Vector2(1009, 555)
+
+[node name="frog_mobs5" parent="Mobs" instance=ExtResource("6_kqxyy")]
+position = Vector2(1303, 484)
+
+[node name="Bars" type="CanvasLayer" parent="."]
+script = ExtResource("7_si64w")
+
+[node name="Health_label" type="Label" parent="Bars"]
+offset_left = 33.0
+offset_top = 3.0
+offset_right = 567.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 100
+
+[node name="Score_label" type="Label" parent="Bars"]
+offset_left = 33.0
+offset_top = 106.0
+offset_right = 567.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 100
