@@ -12,38 +12,49 @@
 script = ExtResource("1_aha12")
 
 [node name="Start" type="Button" parent="."]
-offset_left = 1814.0
-offset_top = 207.0
-offset_right = 2091.0
-offset_bottom = 329.0
+offset_left = 1591.0
+offset_top = 92.0
+offset_right = 1941.0
+offset_bottom = 214.0
 theme_override_fonts/font = SubResource("SystemFont_2t8b3")
 theme_override_font_sizes/font_size = 65
-text = "Start"
+text = "New Game"
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 1591.0
+offset_top = 250.0
+offset_right = 1941.0
+offset_bottom = 372.0
+theme_override_fonts/font = SubResource("SystemFont_2t8b3")
+theme_override_font_sizes/font_size = 65
+text = "Continue"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 1815.0
-offset_top = 380.0
-offset_right = 2092.0
-offset_bottom = 502.0
+offset_left = 1590.0
+offset_top = 416.0
+offset_right = 1943.0
+offset_bottom = 538.0
 theme_override_font_sizes/font_size = 65
 text = "Quit"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_132xr")]
 
 [node name="Vulture2" type="Sprite2D" parent="."]
-position = Vector2(1829, 211)
+position = Vector2(1594, 80)
 scale = Vector2(3.21795, 2.96154)
 texture = ExtResource("3_3o665")
 
 [node name="0003Layer-4" type="Sprite2D" parent="."]
-position = Vector2(2102, 280)
+position = Vector2(1968, 333)
 scale = Vector2(2.56349, 3.58108)
 texture = ExtResource("4_l6jnq")
 
 [node name="Branch-01" type="Sprite2D" parent="."]
-position = Vector2(1827, 493)
+position = Vector2(1605, 524)
 scale = Vector2(1.46818, 1.1822)
 texture = ExtResource("5_b0brd")
 
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

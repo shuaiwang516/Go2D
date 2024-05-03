@@ -153,20 +153,20 @@ vertical_alignment = 1
 motion_scale = Vector2(2.08165e-12, 1)
 
 [node name="1-removebg-preview" type="Sprite2D" parent="Logo"]
-position = Vector2(426, 264)
+position = Vector2(592.5, 314.77)
 texture = ExtResource("13_hwldo")
 
 [node name="Flying-creature-cycle-skin1" type="Sprite2D" parent="Logo"]
-position = Vector2(253, 186)
+position = Vector2(419.5, 236.77)
 scale = Vector2(2.9375, 2.72581)
 texture = ExtResource("9_7jhke")
 
 [node name="0002Layer-3" type="Sprite2D" parent="Logo"]
-position = Vector2(580, 145)
+position = Vector2(746.5, 195.77)
 rotation = 0.678933
 texture = ExtResource("15_glmin")
 
 [node name="Bettle1" type="Sprite2D" parent="Logo"]
-position = Vector2(312, 389)
+position = Vector2(478.5, 439.77)
 scale = Vector2(2.02778, 1.83333)
 texture = ExtResource("10_ykit7")

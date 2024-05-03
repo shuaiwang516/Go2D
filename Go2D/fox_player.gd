@@ -59,3 +59,9 @@ func _physics_process(delta):
 	if Utils.health_zero():
 		queue_free()
 		get_tree().change_scene_to_file("res://main.tscn")
+
+func _input(event):
+	if Input.is_key_pressed(KEY_1):
+		Game.player_health -= 1
+	if Input.is_key_pressed(KEY_2):
+		Game.player_score += 1

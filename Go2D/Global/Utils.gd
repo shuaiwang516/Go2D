@@ -5,8 +5,7 @@ const SAVE_PATH = "res://savegame.bin"
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var data = {
-		"player_health": Game.player_health,
-		"player_score": Game.player_score
+		"cur_level": Game.cur_level
 	}
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)
@@ -18,9 +17,8 @@ func load_game():
 		if not file.eof_reached():
 			var cur_line = JSON.parse_string(file.get_line())
 			if cur_line:
-				Game.player_health = cur_line["player_health"]
-				Game.player_score = cur_line["player_score"]
-	file.close()
+				Game.cur_level = cur_line["cur_level"]
+		file.close()
 
 func get_player():
 	var players = get_tree().get_nodes_in_group("player_group")
