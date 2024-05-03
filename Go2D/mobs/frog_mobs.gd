@@ -5,6 +5,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 var SPEED = 150
 var death = false
+var point_earned = false
 
 func _physics_process(delta):
 	if death:
@@ -39,11 +40,14 @@ func _on_player_detection_body_exited(body):
 
 
 func Death():
+	var anim = get_node("AnimatedSprite2D")
 	self.death = true
 	self.chase = false
-	Game.player_score += 1
-	get_node("AnimatedSprite2D").play("Death")
-	await get_node("AnimatedSprite2D").animation_finished
+	if not point_earned:
+		Game.player_score += 3
+		point_earned = true
+	anim.play("Death")
+	await anim.animation_finished
 	self.queue_free()
 	
 func _on_deatch_detection_body_entered(body):
@@ -54,5 +58,6 @@ func _on_deatch_detection_body_entered(body):
 func _on_hurt_detection_body_entered(body):
 	if str(body.name).contains("player"):
 		print("hurt v")
-		Game.player_health -= 3	
+		if not death:
+			Game.player_health -= 3	
 		Death()
