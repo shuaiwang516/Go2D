@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://t13atobd7bn7" path="res://Sunny Land Collection Files/Packs/Packs/Sunnyland/sprites/item-feedback/item-feedback-4.png" id="4_q7cti"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aja85"]
-height = 22.0
+radius = 17.0
+height = 34.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tgoe"]
 animations = [{
@@ -32,6 +33,14 @@ animations = [{
 [node name="Flag" type="Area2D"]
 script = ExtResource("1_6plxo")
 
+[node name="Label" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -45.0
+offset_right = 39.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "You Win!!!"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_aja85")
@@ -40,5 +49,6 @@ shape = SubResource("CapsuleShape2D_aja85")
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_0tgoe")
 animation = &"Idle"
+frame_progress = 0.0417565
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

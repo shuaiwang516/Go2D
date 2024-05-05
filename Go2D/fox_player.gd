@@ -56,6 +56,9 @@ func _physics_process(delta):
 		player.play("Fall")
 	move_and_slide()
 	
+	if position.y >= 1300:
+		Game.player_health = 0
+	
 	if Utils.health_zero():
 		queue_free()
 		get_tree().change_scene_to_file("res://main.tscn")
